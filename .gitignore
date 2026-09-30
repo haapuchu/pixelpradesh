@@ -52,8 +52,9 @@ agent
 .agents
 skills-lock.json
 
-# duplicate raw assets & large recordings
-images/
+# duplicate raw assets in root & large recordings
+/images/
+!public/images/
 public/recordings/*.webm
 scripts/*.png
 scripts/*.jpg
