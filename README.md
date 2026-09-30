@@ -7,7 +7,8 @@
 ### Built by **Team Lotux** for the Pixels to Products — Cloudinary AI Hackathon 2026
 
 [![Team](https://img.shields.io/badge/Team-Team_Lotux-7C3AED?style=for-the-badge&logo=shield)](https://github.com/haapuchu/pixelpradesh)
-[![Next.js](https://img.shields.io/badge/Next.js-16.3.6_(Turbopack)-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-pixelpradesh.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://pixelpradesh.vercel.app/)
+[![YouTube Demo](https://img.shields.io/badge/YouTube-Watch_Walkthrough-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/mgdr_7HrOUQ)
 [![Cloudinary AI](https://img.shields.io/badge/Powered_by-Cloudinary_AI-3448C5?style=for-the-badge&logo=cloudinary)](https://cloudinary.com/)
 [![Track 2](https://img.shields.io/badge/Track_2-Generative_Workflows-ea580c?style=for-the-badge)](https://hackindia.org/)
 [![Track 3](https://img.shields.io/badge/Track_3-Media_Startup_SaaS-059669?style=for-the-badge)](https://hackindia.org/)
@@ -23,18 +24,19 @@
 
 ## Project Showcase & Walkthrough
 
-### Product Demo Video
+### Official Video Walkthrough
 Watch the full high-resolution walkthrough of PixelPradesh showcasing the autonomous regional localization pipeline, deterministic Cloudinary state machine, interactive review studio, and 1-click campaign export:
 
 <div align="center">
 
-<a href="public/videos/pixelpradesh_demo.mp4">
-  <img src="public/videos/video_thumbnail.png" alt="PixelPradesh Walkthrough Video" width="100%" style="max-width: 900px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #e7e5e4;" />
+<a href="https://youtu.be/mgdr_7HrOUQ" target="_blank" rel="noopener noreferrer">
+  <img src="public/videos/video_thumbnail.png" alt="PixelPradesh Video Walkthrough on YouTube" width="100%" style="max-width: 900px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #e7e5e4;" />
 </a>
 
 <br/>
 
-> **Watch Walkthrough Video**: [Click Here to Watch / Download `pixelpradesh_demo.mp4` (Full 1080p Walkthrough)](public/videos/pixelpradesh_demo.mp4) *(Produced by Team Lotux)*
+> **Watch Walkthrough on YouTube**: [https://youtu.be/mgdr_7HrOUQ](https://youtu.be/mgdr_7HrOUQ) *(Full 1080p HD Walkthrough by Team Lotux)*  
+> **Direct Video Asset in Repository**: [`public/videos/pixelpradesh_demo.mp4`](public/videos/pixelpradesh_demo.mp4)
 
 </div>
 

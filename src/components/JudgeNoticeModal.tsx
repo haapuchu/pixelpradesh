@@ -107,8 +107,12 @@ export const JudgeNoticeModal: React.FC<JudgeNoticeModalProps> = ({ isOpen, onCl
         </div>
 
         {/* Live execution note */}
-        <div className="text-[11px] text-stone-500 border-t border-stone-100 pt-3 flex items-center justify-between">
-          <span>Source Code: <a href="https://github.com/haapuchu/pixelpradesh" target="_blank" rel="noreferrer" className="underline font-medium text-stone-700 hover:text-stone-900">github.com/haapuchu/pixelpradesh</a></span>
+        <div className="text-[11px] text-stone-500 border-t border-stone-100 pt-3 flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5">
+            <span>Source: <a href="https://github.com/haapuchu/pixelpradesh" target="_blank" rel="noreferrer" className="underline font-medium text-stone-700 hover:text-stone-900">GitHub</a></span>
+            <span>·</span>
+            <span><a href="https://youtu.be/mgdr_7HrOUQ" target="_blank" rel="noreferrer" className="underline font-medium text-red-600 hover:text-red-700">Watch YouTube Demo</a></span>
+          </div>
           <button
             type="button"
             onClick={onClose}
