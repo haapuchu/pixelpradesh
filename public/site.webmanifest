@@ -1,0 +1,21 @@
+{
+  "name": "PixelPradesh — Autonomous Regional Media Localization Engine",
+  "short_name": "PixelPradesh",
+  "description": "Turn one product image into culturally localized campaign creatives across India's regional markets, languages and formats.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF9",
+  "theme_color": "#FAFAF9",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
