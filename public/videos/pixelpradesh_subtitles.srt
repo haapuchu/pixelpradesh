@@ -1,0 +1,135 @@
+1
+00:00:01,000 --> 00:00:05,200
+India is not a single market.
+
+2
+00:00:05,200 --> 00:00:09,800
+It is twenty-two linguistic regions, each defined by distinct cultural festivals,
+
+3
+00:00:09,800 --> 00:00:13,800
+visual aesthetics, and local consumer sentiments.
+
+4
+00:00:13,800 --> 00:00:18,200
+Every marketing team and e-commerce brand operating in India faces a fundamental crisis:
+
+5
+00:00:18,200 --> 00:00:22,200
+India is not a monolithic market.
+
+6
+00:00:22,200 --> 00:00:27,000
+It is a continent of twenty-two official languages, hundreds of regional dialects,
+
+7
+00:00:27,000 --> 00:00:32,000
+and dozens of distinct festive cultures running simultaneously across the calendar year.
+
+8
+00:00:32,000 --> 00:00:36,800
+When festive seasons arrive—whether it is Diwali in Uttar Pradesh,
+
+9
+00:00:36,800 --> 00:00:41,200
+Durga Puja in Bengal, Pongal in Tamil Nadu, or Ningol Chakouba in Manipur—
+
+10
+00:00:41,200 --> 00:00:47,000
+regional consumers demand visual relevance, localized cultural symbolism, and native-script communication.
+
+11
+00:00:47,000 --> 00:00:52,500
+Welcome to PixelPradesh—an autonomous regional media localization engine built entirely on the power of Cloudinary AI.
+
+12
+00:00:52,500 --> 00:00:57,800
+PixelPradesh turns a single studio photograph into a complete, culturally nuanced, multi-format campaign in seconds.
+
+13
+00:00:57,800 --> 00:01:03,000
+At the core of this entire engine is Cloudinary’s Programmable Media infrastructure,
+
+14
+00:01:03,000 --> 00:01:08,500
+which executes every phase of localization autonomously on the edge through chained transformations.
+
+15
+00:01:08,500 --> 00:01:14,000
+First, Cloudinary anchors the master product geometry, preserving authentic product textures,
+
+16
+00:01:14,000 --> 00:01:19,800
+proportions, and logo boundaries with a structural similarity score exceeding ninety-eight percent.
+
+17
+00:01:19,800 --> 00:01:25,000
+Second, the engine calls Cloudinary’s cutting-edge Generative Background Replace.
+
+18
+00:01:25,000 --> 00:01:29,800
+Instead of static template swaps, Cloudinary uses contextual generative AI
+
+19
+00:01:29,800 --> 00:01:34,500
+to completely synthesize authentic regional environments:
+
+20
+00:01:34,500 --> 00:01:39,800
+warm festive diyas and marigold garlands for North India, terracotta craftsmanship for Bengal,
+
+21
+00:01:39,800 --> 00:01:45,000
+traditional kolam courtyards for Tamil Nadu, and indigenous celebratory motifs for Manipur.
+
+22
+00:01:45,000 --> 00:01:50,000
+Third, to eliminate awkward manual cropping across different ad channels, the engine leverages Cloudinary’s Generative Fill.
+
+23
+00:01:50,000 --> 00:01:55,800
+Cloudinary autonomously outcolors and extends canvas boundaries to exact aspect ratios—
+
+24
+00:01:55,800 --> 00:02:01,200
+one-to-one feed, nine-by-sixteen vertical stories, and sixteen-by-nine display banners—
+
+25
+00:02:01,200 --> 00:02:05,800
+seamlessly synthesizing realistic peripheral detail.
+
+26
+00:02:05,800 --> 00:02:11,000
+Fourth, Cloudinary’s dynamic text layering engine injects localized headlines and calls-to-action
+
+27
+00:02:11,000 --> 00:02:16,500
+directly onto the image using authentic Indic fonts—including Devanagari, Bengali, Tamil, and Meitei—
+
+28
+00:02:16,500 --> 00:02:21,000
+automatically aligned with platform-compliant safe margins.
+
+29
+00:02:21,000 --> 00:02:26,500
+Through our interactive Studio Lightbox, marketing teams can inspect the Before-After split slider,
+
+30
+00:02:26,500 --> 00:02:31,800
+verify live Meta Reels safe zones, and review the exact chained Cloudinary URL recipe that powers every single creative.
+
+31
+00:02:31,800 --> 00:02:37,500
+One product photograph. Four regional markets. Three distribution formats.
+
+32
+00:02:37,500 --> 00:02:42,500
+Twelve broadcast-ready campaign creatives delivered autonomously in seconds.
+
+33
+00:02:42,500 --> 00:02:49,000
+PixelPradesh transforms regional localization from an expensive multi-week bottleneck into an instantaneous, AI-powered competitive advantage—
+
+34
+00:02:49,000 --> 00:02:53,280
+driven end-to-end by Cloudinary AI for HackIndia 2026. Thank you!
