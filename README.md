@@ -28,13 +28,13 @@ Watch the full high-resolution walkthrough of PixelPradesh showcasing the autono
 
 <div align="center">
 
-<video src="public/videos/pixelpradesh_demo.mp4" controls="controls" width="100%" style="max-width: 900px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-  Your browser does not support the video tag.
-</video>
+<a href="public/videos/pixelpradesh_demo.mp4">
+  <img src="public/videos/video_thumbnail.png" alt="PixelPradesh Walkthrough Video" width="100%" style="max-width: 900px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #e7e5e4;" />
+</a>
 
 <br/>
 
-> **Direct Download / Local Playback**: [`public/videos/pixelpradesh_demo.mp4`](public/videos/pixelpradesh_demo.mp4) *(Full 1080p Walkthrough Video by Team Lotux)*
+> **Watch Walkthrough Video**: [Click Here to Watch / Download `pixelpradesh_demo.mp4` (Full 1080p Walkthrough)](public/videos/pixelpradesh_demo.mp4) *(Produced by Team Lotux)*
 
 </div>
 
