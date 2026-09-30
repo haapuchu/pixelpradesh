@@ -21,9 +21,9 @@
 
 ---
 
-## 📽️ Project Showcase & Walkthrough
+## Project Showcase & Walkthrough
 
-### 🎬 Product Demo Video
+### Product Demo Video
 Watch the full high-resolution walkthrough of PixelPradesh showcasing the autonomous regional localization pipeline, deterministic Cloudinary state machine, interactive review studio, and 1-click campaign export:
 
 <div align="center">
@@ -34,13 +34,13 @@ Watch the full high-resolution walkthrough of PixelPradesh showcasing the autono
 
 <br/>
 
-> 📥 **Direct Download / Local Playback**: [`public/videos/pixelpradesh_demo.mp4`](public/videos/pixelpradesh_demo.mp4) *(Full 1080p Walkthrough Video by Team Lotux)*
+> **Direct Download / Local Playback**: [`public/videos/pixelpradesh_demo.mp4`](public/videos/pixelpradesh_demo.mp4) *(Full 1080p Walkthrough Video by Team Lotux)*
 
 </div>
 
 ---
 
-## 📸 Visual Tour & Studio Walkthrough
+## Visual Tour & Studio Walkthrough
 
 ### 1. Studio Command Center & Live Contact Sheet
 Upload a single studio product photo or select an artisanal Indian preset. PixelPradesh immediately computes the master color palette, safe bounds, and campaign dimensions.
@@ -50,7 +50,7 @@ Upload a single studio product photo or select an artisanal Indian preset. Pixel
 ---
 
 ### 2. 3-Step Autonomous Workflow Engine
-A transparent, non-black-box generation pipeline that isolates product silhouettes, synthesizes culturally accurate festival backdrops, outpaints channel aspect ratios, and composites localized typography.
+A transparent, deterministic generation pipeline that isolates product silhouettes, synthesizes culturally accurate festival backdrops, outpaints channel aspect ratios, and composites localized typography.
 
 ![How PixelPradesh Works](ss/02_architecture_workflow.png)
 
@@ -77,16 +77,16 @@ Deep-dive inspection suite featuring live Channel UI simulations (Simulated Conn
 
 ---
 
-## 📌 Executive Summary & The Problem
+## Executive Summary & Problem Statement
 
 ### The India Localization Paradox
 India represents the world's most vibrant and complex consumer market:
 * **1.4+ Billion Consumers** across **28 States** and **22 Scheduled Languages**.
 * **$25B+ Annual Festive Retail Economy**: Consumer buying surges around deeply localized festivals—**Diwali** in the North & West, **Durga Puja** in Bengal & the East, **Pongal** in Tamil Nadu & the South, and **Ningol Chakouba** in Manipur & the Northeast.
-* **The Creative Bottleneck**: When national brands (FMCG, D2C, apparel, luxury goods) launch festive campaigns, they are forced to choose between two unacceptable trade-offs:
-  1. **Generic National Creatives**: Blanket Hindi/English ads that fail to resonate with regional sensibilities, leading to depressed conversion rates.
+* **The Creative Bottleneck**: When national brands (FMCG, D2C, apparel, luxury goods) launch festive campaigns, they face severe operational friction:
+  1. **Generic National Creatives**: Blanket Hindi/English ads that fail to resonate with regional sensibilities, leading to depressed engagement and conversions.
   2. **Agency Fragmentation**: Commissioning localized photo shoots and creative agencies across different states—costing **INR 5,00,000 to 15,00,000** and **2 to 4 weeks of turnaround time** for every campaign cycle.
-  3. **Silhouette Warping & Safe-Zone Violations**: Manual ad resizing distorts packaging geometry and places critical text over channel UI overlays (Instagram Reels buttons, OTT playback bars).
+  3. **Silhouette Warping & Safe-Zone Violations**: Manual ad resizing distorts packaging geometry and places critical text over channel UI overlays (Instagram Reels action rails, OTT playback bars).
 
 ### The Solution: PixelPradesh by Team Lotux
 **PixelPradesh is an autonomous regional media localization engine powered by Cloudinary AI.**
@@ -99,7 +99,7 @@ A brand manager uploads **one studio product photograph** and inputs a campaign 
 
 ---
 
-## 🏛️ Cloudinary AI & Media Architecture
+## Cloudinary AI & Media Architecture
 
 > **Mandatory Hackathon Compliance**: Cloudinary is **not** used as passive static storage. It is the active generative and computational backbone of the entire product.
 
@@ -149,20 +149,41 @@ A brand manager uploads **one studio product photograph** and inputs a campaign 
                       └───────────────────────────────────────┘
 ```
 
-### Cloudinary Primitives Used
+### Cloudinary Generative Pipeline Architecture
 
-| Pipeline Stage | Cloudinary Primitive / API | Parameter Syntax | Architectural Role |
-| :--- | :--- | :--- | :--- |
-| **1. Asset Ingestion** | Node SDK `uploader.upload` | `colors: true, quality_analysis: true, fl_getinfo` | Ingests master packaging, extracts dominant hex palettes, and establishes visual baseline. |
-| **2. Scene Localization** | Generative Background Replace | `e_gen_background_replace:prompt_<cultural_prompt>` | Isolates foreground merchandise and synthesizes authentic regional festival backdrops. |
-| **3. Prop Synthesis** | Generative Prop Replacement | `e_gen_replace:from_<item>;to_<item>` | Dynamically substitutes neutral props with culturally grounded artifacts (diyas, dhunuchi, lotus). |
-| **4. Format Outpainting** | Generative Fill & Aspect Pad | `c_pad,ar_<aspect>,b_gen_fill` | Expands canvas vertically and horizontally to standard ad ratios without stretching the product. |
-| **5. Indic Script Overlay** | Unicode Text Layer Composition | `l_text:<font>_<size>_bold:<text>,co_rgb:<hex>,g_north,y_<offset>` | Dynamically composites regional headlines and CTA buttons in native scripts at safe-zone coordinates. |
-| **6. Edge Delivery** | Auto-Format & Auto-Quality | `f_auto,q_auto` | Delivers WebP/AVIF assets optimized for Indian 4G/5G mobile bandwidth with zero perceptual quality loss. |
+#### Stage 1: Asset Ingestion & Baseline Analysis
+* **Cloudinary API Primitive:** Node.js SDK `uploader.upload`
+* **Syntax & Parameters:** `colors: true, quality_analysis: true, fl_getinfo`
+* **Architectural Function:** Ingests the master packaging photograph, extracts dominant color hex palettes, measures resolution boundaries, and establishes the SSIM geometry baseline.
+
+#### Stage 2: Generative Scene Localization
+* **Cloudinary API Primitive:** Generative Background Replace
+* **Syntax & Parameters:** `e_gen_background_replace:prompt_<festive_prompt>`
+* **Architectural Function:** Automatically isolates the foreground product package and synthesizes photorealistic, culturally authentic festive backdrops (such as brass diyas, terracotta dhunuchi, or water reeds).
+
+#### Stage 3: Generative Prop Substitution
+* **Cloudinary API Primitive:** Generative Replace
+* **Syntax & Parameters:** `e_gen_replace:from_<item>;to_<item>`
+* **Architectural Function:** Dynamically detects and replaces neutral supporting props with culturally specific festive artifacts (e.g., brass puja thali, harvest clay pot, or lotus blooms).
+
+#### Stage 4: Multi-Format Generative Fill
+* **Cloudinary API Primitive:** Generative Fill & Aspect Ratio Padding
+* **Syntax & Parameters:** `c_pad, ar_<1:1 | 9:16 | 16:9>, b_gen_fill`
+* **Architectural Function:** Outpaints missing horizontal or vertical background canvas to fit social feeds, vertical stories/reels, and widescreen displays without cropping or stretching product geometry.
+
+#### Stage 5: Indic Script Typography Overlay
+* **Cloudinary API Primitive:** Unicode Text Layer Composition
+* **Syntax & Parameters:** `l_text:<font>_<size>_bold:<encoded_text>, co_rgb:<hex>, g_north, y_<offset>`
+* **Architectural Function:** Dynamically composites localized festive headlines and CTA badges in authentic regional scripts (Devanagari, Bengali, Tamil, Meitei Mayek) positioned strictly within platform safe zones.
+
+#### Stage 6: Edge Optimization & Delivery
+* **Cloudinary API Primitive:** Auto-Format & Auto-Quality
+* **Syntax & Parameters:** `f_auto, q_auto`
+* **Architectural Function:** Delivers next-generation image formats (AVIF/WebP) with perceptual compression, ensuring high-speed delivery across Indian mobile networks.
 
 ---
 
-## 🔍 Deterministic Cloudinary URL Recipe
+## Deterministic Cloudinary URL Recipe
 
 Every single creative rendered in PixelPradesh is 100% reproducible via Cloudinary's dynamic URL API. For example, here is the exact transformation recipe for the **Diwali 16:9 Display Banner**:
 
@@ -178,20 +199,20 @@ https://res.cloudinary.com/dcgug3wg/image/upload/
 
 ---
 
-## 🌏 Cultural Anthropology & Indic Script Localization
+## Cultural Anthropology & Indic Script Localization
 
 PixelPradesh strictly avoids stereotypical caricatures. Each festive node has been engineered using authentic cultural anthropology, native typography, and symbolic color tokens:
 
-| Festival & Market | Geographic Region | Native Script | Accent Color Token | Authentic Cultural Motifs | Regional Headline Translation |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Diwali** | North & West India | **Devanagari** (Hindi) | Warm Amber `#D97706` | Handcrafted brass diyas, marigold garlands, golden candlelight bokeh | *इस दिवाली, हर रिश्ते में घुले शुद्ध मिठास*<br/>*(This Diwali, pure sweetness in every bond)* |
-| **Durga Puja** | West Bengal & East India | **Bengali** | Sindoor Crimson `#DC2626` | Fragrant terracotta *dhunuchi* incense smoke, red-bordered *garad* silk drape, autumn Kash reeds | *পূজোর মিষ্টি উৎসবে আপনজনদের সাথে*<br/>*(In the festive sweetness of Puja with loved ones)* |
-| **Pongal** | Tamil Nadu & South India | **Tamil** | Turmeric Leaf `#059669` | Traditional clay Pongal pot with boiling milk & rice, raw sugarcane stalks, fresh banana leaf plating | *பொங்கல் திருநாளில் பாரம்பரிய சுவை*<br/>*(Traditional taste on the auspicious day of Pongal)* |
-| **Ningol Chakouba** | Manipur & Northeast India | **Meitei Mayek** (`ꯅꯤꯉꯣꯜ ꯆꯥꯛꯀꯧꯕ`) | Lotus Blossom `#DB2777` | Floating reed *phumdis* on Loktak lake, pink lotus blossoms, handwoven *Moirang Phee* textile motifs | *ꯅꯤꯉꯣꯜ ꯆꯥꯛꯀꯧꯕ ꯌꯥꯏꯐꯔꯦ*<br/>*(Blessed greetings for Ningol Chakouba)* |
+| Festive Market | Target Region & Script | Cultural Motifs & Palette | Localized Headline |
+| :--- | :--- | :--- | :--- |
+| **Diwali** | North & West India<br/>`Devanagari (Hindi)` | Handcrafted brass diyas, marigold garlands, warm amber candlelight (`#D97706`) | *इस दिवाली, हर रिश्ते में घुले शुद्ध मिठास*<br/>*(Pure festive sweetness in every bond)* |
+| **Durga Puja** | West Bengal & East India<br/>`Bengali Script` | Fragrant terracotta dhunuchi incense smoke, garad silk drape, autumn Kash reeds (`#DC2626`) | *পূজোর মিষ্টি উৎসবে আপনজনদের সাথে*<br/>*(In the festive sweetness of Puja with loved ones)* |
+| **Pongal** | Tamil Nadu & South India<br/>`Tamil Script` | Traditional clay Pongal pot with boiling milk & rice, raw sugarcane stalks, fresh banana leaf (`#059669`) | *பொங்கல் திருநாளில் பாரம்பரிய சுவை*<br/>*(Traditional taste on the auspicious day of Pongal)* |
+| **Ningol Chakouba** | Manipur & Northeast India<br/>`Meitei Mayek Script` | Floating reed phumdis on Loktak lake, pink lotus blossoms, handwoven Moirang Phee motifs (`#DB2777`) | *ꯅꯤꯉꯣꯜ ꯆꯥꯛꯀꯧꯕ ꯌꯥꯏꯐꯔꯦ*<br/>*(Blessed greetings for Ningol Chakouba)* |
 
 ---
 
-## 💻 Deep Studio Features & Capabilities
+## Studio Features & Inspection Capabilities
 
 ### 1. Preset Product Catalog
 PixelPradesh comes pre-loaded with 3 culturally diverse, pre-calibrated master products for instantaneous testing:
@@ -200,7 +221,7 @@ PixelPradesh comes pre-loaded with 3 culturally diverse, pre-calibrated master p
 * **Makaibari Single Estate Autumn Flush**: GI-tagged organic luxury Darjeeling tea.
 
 ### 2. Multi-Perspective Matrix View
-* **Overview (4×3 Grid)**: Inspect all 12 variants simultaneously across regions and formats.
+* **Overview (4x3 Grid)**: Inspect all 12 variants simultaneously across regions and formats.
 * **By Format View**: Filter creatives into dedicated `1:1 Social Feed`, `9:16 Stories & Reels`, and `16:9 Display Banner` lanes.
 * **By Region View**: Deep-dive into individual festival campaigns with region-specific copy and hashtag stacks.
 
@@ -226,7 +247,7 @@ PixelPradesh comes pre-loaded with 3 culturally diverse, pre-calibrated master p
 
 ---
 
-## 🛠️ Local Development & Quickstart
+## Local Development & Quickstart
 
 ### Prerequisites
 * **Node.js**: v18.18+ or v20+
@@ -272,7 +293,7 @@ Builds cleanly with zero TypeScript errors on Next.js 16 (Turbopack).
 
 ---
 
-## 📈 Business Viability & Startup Economics
+## Business Viability & Startup Economics
 
 ### Unit Economics Comparison
 
@@ -291,7 +312,7 @@ Builds cleanly with zero TypeScript errors on Next.js 16 (Turbopack).
 
 ---
 
-## 🏆 Team Lotux & Hackathon Submission Details
+## Team Lotux & Hackathon Submission Details
 
 * **Project**: PixelPradesh — Autonomous Regional Media Localization Engine
 * **Team**: **Team Lotux**
