@@ -291,39 +291,42 @@ export const CampaignMatrix: React.FC<CampaignMatrixProps> = ({
         </div>
 
         {/* Perspective Toggle: Overview / By format / By region */}
-        <div className="flex items-center rounded-xl border border-stone-200 bg-stone-100/80 p-1 shrink-0">
+        <div className="w-full sm:w-auto grid grid-cols-3 sm:flex items-center rounded-xl border border-stone-200 bg-stone-100/80 p-1 shrink-0">
           <button
             onClick={() => setPerspective('overview')}
-            className={`tactile-btn flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
+            className={`tactile-btn flex items-center justify-center gap-1 sm:gap-1.5 rounded-lg px-2 sm:px-3 py-2 sm:py-1.5 text-[11px] sm:text-xs font-semibold transition-all min-h-[38px] sm:min-h-0 cursor-pointer ${
               perspective === 'overview'
                 ? 'bg-white text-stone-900 shadow-xs'
                 : 'text-stone-500 hover:text-stone-900'
             }`}
           >
-            <LayoutGrid className="h-3.5 w-3.5 text-stone-700" />
-            <span>Overview (4×3)</span>
+            <LayoutGrid className="h-3.5 w-3.5 text-stone-700 shrink-0" />
+            <span className="hidden sm:inline">Overview (4×3)</span>
+            <span className="sm:hidden">Overview</span>
           </button>
           <button
             onClick={() => setPerspective('by_channel')}
-            className={`tactile-btn flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
+            className={`tactile-btn flex items-center justify-center gap-1 sm:gap-1.5 rounded-lg px-2 sm:px-3 py-2 sm:py-1.5 text-[11px] sm:text-xs font-semibold transition-all min-h-[38px] sm:min-h-0 cursor-pointer ${
               perspective === 'by_channel'
                 ? 'bg-white text-stone-900 shadow-xs'
                 : 'text-stone-500 hover:text-stone-900'
             }`}
           >
-            <Layers className="h-3.5 w-3.5 text-stone-700" />
-            <span>By format</span>
+            <Layers className="h-3.5 w-3.5 text-stone-700 shrink-0" />
+            <span className="hidden sm:inline">By format</span>
+            <span className="sm:hidden">Format</span>
           </button>
           <button
             onClick={() => setPerspective('by_region')}
-            className={`tactile-btn flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
+            className={`tactile-btn flex items-center justify-center gap-1 sm:gap-1.5 rounded-lg px-2 sm:px-3 py-2 sm:py-1.5 text-[11px] sm:text-xs font-semibold transition-all min-h-[38px] sm:min-h-0 cursor-pointer ${
               perspective === 'by_region'
                 ? 'bg-white text-stone-900 shadow-xs'
                 : 'text-stone-500 hover:text-stone-900'
             }`}
           >
-            <Globe2 className="h-3.5 w-3.5 text-stone-700" />
-            <span>By region</span>
+            <Globe2 className="h-3.5 w-3.5 text-stone-700 shrink-0" />
+            <span className="hidden sm:inline">By region</span>
+            <span className="sm:hidden">Region</span>
           </button>
         </div>
       </div>

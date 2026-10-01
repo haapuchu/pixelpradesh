@@ -281,3 +281,17 @@ nextjs-portal,
     scroll-behavior: auto !important;
   }
 }
+
+/* Mobile Touch & Viewport Refinements */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (max-width: 640px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+  }
+}

@@ -271,13 +271,13 @@ export default function Home() {
       />
 
       {/* SPACIOUS 2-COLUMN HERO SECTION — Clean, breathable, editorial hierarchy */}
-      <section className="relative border-b border-stone-200/80 bg-gradient-to-b from-stone-50/70 to-[#fafaf9] pt-12 pb-16 sm:pt-16 sm:pb-20 overflow-hidden">
+      <section className="relative border-b border-stone-200/80 bg-gradient-to-b from-stone-50/70 to-[#fafaf9] pt-8 pb-12 sm:pt-16 sm:pb-20 overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Column 1: Manifesto & Stats (lg:col-span-7) */}
-            <div className="lg:col-span-7 space-y-6">
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[48px] font-bold tracking-tight text-stone-900 leading-[1.08]">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
+              <h1 className="font-display text-3xl sm:text-5xl lg:text-[48px] font-bold tracking-tight text-stone-900 leading-[1.1] sm:leading-[1.08]">
                 One product.{' '}
                 <br />
                 <span className="font-editorial italic font-normal text-stone-600">
@@ -292,10 +292,10 @@ export default function Home() {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-1">
+              <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-2.5 sm:gap-3 pt-1">
                 <a
                   href="#workspace"
-                  className="saffron-btn inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-xs sm:text-sm font-semibold shadow-xs transition-all hover:scale-[1.01]"
+                  className="saffron-btn inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 sm:py-2.5 text-xs sm:text-sm font-semibold shadow-xs min-h-[44px] transition-all hover:scale-[1.01]"
                 >
                   <span>Create campaign</span>
                   <ArrowRight className="h-4 w-4" />
@@ -303,39 +303,39 @@ export default function Home() {
 
                 <a
                   href="#how-it-works"
-                  className="inline-flex items-center justify-center rounded-xl border border-stone-200 bg-white px-4 py-2.5 text-xs sm:text-sm font-semibold text-stone-700 hover:bg-stone-50 transition-colors shadow-2xs"
+                  className="inline-flex items-center justify-center rounded-xl border border-stone-200 bg-white px-4 py-3 sm:py-2.5 text-xs sm:text-sm font-semibold text-stone-700 hover:bg-stone-50 min-h-[44px] transition-colors shadow-2xs"
                 >
                   How it works
                 </a>
               </div>
 
               {/* Multiplier Stats: 01 — 04 — 03 — 12 */}
-              <div className="flex items-center gap-5 sm:gap-7 pt-6 border-t border-stone-200/80 max-w-lg">
+              <div className="grid grid-cols-4 sm:flex items-center gap-2 sm:gap-7 pt-5 sm:pt-6 border-t border-stone-200/80 max-w-lg">
                 <div>
-                  <div className="font-display text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">01</div>
-                  <div className="text-[11px] sm:text-xs font-medium text-stone-500 mt-0.5">Master asset</div>
+                  <div className="font-display text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">01</div>
+                  <div className="text-[10px] sm:text-xs font-medium text-stone-500 mt-0.5 leading-tight">Master asset</div>
                 </div>
-                <span className="text-stone-300 select-none pb-4 font-light text-lg sm:text-xl">—</span>
+                <span className="hidden sm:inline text-stone-300 select-none pb-4 font-light text-lg sm:text-xl">—</span>
                 <div>
-                  <div className="font-display text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">04</div>
-                  <div className="text-[11px] sm:text-xs font-medium text-stone-500 mt-0.5">Regional markets</div>
+                  <div className="font-display text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">04</div>
+                  <div className="text-[10px] sm:text-xs font-medium text-stone-500 mt-0.5 leading-tight">Regional markets</div>
                 </div>
-                <span className="text-stone-300 select-none pb-4 font-light text-lg sm:text-xl">—</span>
+                <span className="hidden sm:inline text-stone-300 select-none pb-4 font-light text-lg sm:text-xl">—</span>
                 <div>
-                  <div className="font-display text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">03</div>
-                  <div className="text-[11px] sm:text-xs font-medium text-stone-500 mt-0.5">Formats</div>
+                  <div className="font-display text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">03</div>
+                  <div className="text-[10px] sm:text-xs font-medium text-stone-500 mt-0.5 leading-tight">Formats</div>
                 </div>
-                <span className="text-stone-300 select-none pb-4 font-light text-lg sm:text-xl">—</span>
+                <span className="hidden sm:inline text-stone-300 select-none pb-4 font-light text-lg sm:text-xl">—</span>
                 <div>
-                  <div className="font-display text-2xl sm:text-3xl font-bold text-amber-700 tracking-tight">12</div>
-                  <div className="text-[11px] sm:text-xs font-semibold text-stone-700 mt-0.5">Ready creatives</div>
+                  <div className="font-display text-xl sm:text-3xl font-bold text-amber-700 tracking-tight">12</div>
+                  <div className="text-[10px] sm:text-xs font-semibold text-stone-700 mt-0.5 leading-tight">Ready creatives</div>
                 </div>
               </div>
             </div>
 
             {/* Column 2: Compact Campaign Contact Sheet Card (lg:col-span-5) */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="w-full max-w-[420px] rounded-2xl border border-stone-200/90 bg-white p-4 sm:p-5 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] ring-1 ring-stone-900/5">
+              <div className="w-full max-w-[420px] rounded-2xl border border-stone-200/90 bg-white p-3.5 sm:p-5 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] ring-1 ring-stone-900/5">
                 {/* Header */}
                 <div className="flex items-center justify-between pb-3 mb-3 border-b border-stone-100">
                   <div className="flex items-center gap-2">
@@ -740,21 +740,23 @@ export default function Home() {
       />
 
       {/* Editorial Product Footer */}
-      <footer className="mt-20 border-t border-stone-200 bg-white py-8 text-xs text-stone-500">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5">
-            <AdaptrLogo size={20} />
-            <span className="font-display font-bold text-stone-900 text-sm">PixelPradesh</span>
-            <span className="text-stone-300">·</span>
-            <span>Autonomous Regional Media Localization Engine</span>
+      <footer className="mt-14 sm:mt-20 border-t border-stone-200 bg-white py-6 sm:py-8 text-xs text-stone-500">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-2.5">
+            <div className="flex items-center gap-2">
+              <AdaptrLogo size={20} />
+              <span className="font-display font-bold text-stone-900 text-sm">PixelPradesh</span>
+            </div>
+            <span className="hidden sm:inline text-stone-300">·</span>
+            <span className="text-[11px] sm:text-xs">Autonomous Regional Media Localization Engine</span>
           </div>
 
-          <div className="flex items-center gap-4 text-xs">
-            <a href="#how-it-works" className="text-stone-600 hover:text-stone-900 transition-colors">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs">
+            <a href="#how-it-works" className="text-stone-600 hover:text-stone-900 transition-colors py-1 min-h-[36px] flex items-center">
               How it works
             </a>
             <span className="text-stone-300">·</span>
-            <a href="#workspace" className="text-stone-600 hover:text-stone-900 transition-colors">
+            <a href="#workspace" className="text-stone-600 hover:text-stone-900 transition-colors py-1 min-h-[36px] flex items-center">
               Campaign workspace
             </a>
             <span className="text-stone-300">·</span>

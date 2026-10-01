@@ -69,7 +69,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
       onTouchStart={() => setIsDragging(true)}
       onTouchEnd={() => setIsDragging(false)}
       onTouchMove={handleTouchMove}
-      className={`relative ${containerAspectClasses} select-none overflow-hidden rounded-2xl border border-stone-800/90 bg-[#0c0a09] cursor-ew-resize shadow-2xl`}
+      className={`relative ${containerAspectClasses} select-none overflow-hidden rounded-2xl border border-stone-800/90 bg-[#0c0a09] cursor-ew-resize shadow-2xl touch-none`}
     >
       {/* Background Image: Localized Creative (Right/After) */}
       <div className="absolute inset-0 flex items-center justify-center bg-[#0c0a09]">

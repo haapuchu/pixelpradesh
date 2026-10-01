@@ -99,7 +99,7 @@ export const MasterAssetDock: React.FC<MasterAssetDockProps> = ({
   };
 
   return (
-    <div className="editorial-surface rounded-2xl p-6 sm:p-7 bg-white shadow-xs">
+    <div className="editorial-surface rounded-2xl p-4 sm:p-7 bg-white shadow-xs">
       <input
         ref={fileInputRef}
         type="file"
@@ -113,7 +113,7 @@ export const MasterAssetDock: React.FC<MasterAssetDockProps> = ({
       />
 
       {/* Header bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 mb-6 border-b border-stone-100">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 sm:pb-5 mb-5 sm:mb-6 border-b border-stone-100">
         <div>
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="h-4 w-4 text-stone-700" />
@@ -129,14 +129,14 @@ export const MasterAssetDock: React.FC<MasterAssetDockProps> = ({
         {/* Upload & Preset state controls */}
         <div className="flex items-center gap-2">
           {isCustom ? (
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800">
                 <span className="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
                 Custom asset
               </span>
               <button
                 onClick={onClearCustom}
-                className="tactile-btn flex items-center gap-1 rounded-lg border border-stone-200 bg-white px-2.5 py-1 text-xs text-stone-600 hover:text-stone-900 hover:border-stone-300"
+                className="tactile-btn flex items-center gap-1 rounded-lg border border-stone-200 bg-white px-2.5 py-1 text-xs text-stone-600 hover:text-stone-900 hover:border-stone-300 min-h-[38px] sm:min-h-0"
               >
                 <X className="h-3 w-3" />
                 <span>Reset to presets</span>
@@ -146,7 +146,7 @@ export const MasterAssetDock: React.FC<MasterAssetDockProps> = ({
             <button
               onClick={() => fileInputRef.current?.click()}
               disabled={isUploading}
-              className="tactile-btn inline-flex items-center gap-1.5 rounded-lg border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs font-medium text-stone-700 hover:bg-stone-100 hover:border-stone-300 transition-colors"
+              className="tactile-btn inline-flex items-center justify-center gap-1.5 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2.5 sm:py-1.5 text-xs font-medium text-stone-700 hover:bg-stone-100 hover:border-stone-300 transition-colors w-full sm:w-auto min-h-[44px] sm:min-h-0 cursor-pointer"
             >
               <Upload className="h-3.5 w-3.5 text-stone-500" />
               <span>{isUploading ? 'Uploading...' : 'Upload product photo'}</span>
@@ -296,7 +296,7 @@ export const MasterAssetDock: React.FC<MasterAssetDockProps> = ({
                   }
                 }
               }}
-              className="w-full rounded-xl border border-stone-200 bg-stone-50/50 px-3 py-2 text-xs text-stone-900 placeholder-stone-400 transition-all focus:border-stone-800 focus:bg-white focus:outline-none focus:ring-0 shadow-2xs"
+              className="w-full rounded-xl border border-stone-200 bg-stone-50/50 px-3 py-2.5 sm:py-2 text-base sm:text-xs text-stone-900 placeholder-stone-400 transition-all focus:border-stone-800 focus:bg-white focus:outline-none focus:ring-0 shadow-2xs"
               placeholder="e.g. Haldiram's Royal Kaju Katli"
             />
           </div>
@@ -319,7 +319,7 @@ export const MasterAssetDock: React.FC<MasterAssetDockProps> = ({
                   }
                 }
               }}
-              className="w-full resize-none rounded-xl border border-stone-200 bg-stone-50/50 p-2.5 text-xs leading-relaxed text-stone-900 placeholder-stone-400 transition-all focus:border-stone-800 focus:bg-white focus:outline-none focus:ring-0 shadow-2xs"
+              className="w-full resize-none rounded-xl border border-stone-200 bg-stone-50/50 p-2.5 text-base sm:text-xs leading-relaxed text-stone-900 placeholder-stone-400 transition-all focus:border-stone-800 focus:bg-white focus:outline-none focus:ring-0 shadow-2xs"
               placeholder="Provide festive context, cultural motifs, or seasonal messaging..."
             />
           </div>

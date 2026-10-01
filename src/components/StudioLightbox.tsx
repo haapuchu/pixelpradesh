@@ -262,20 +262,20 @@ export const StudioLightbox: React.FC<StudioLightboxProps> = ({
       }}
     >
       {/* Lightbox Modal Shell: Full natural flow on mobile/tablet, side-by-side on desktop */}
-      <div className="relative flex flex-col lg:flex-row w-full max-w-5xl xl:max-w-6xl max-h-[95vh] lg:max-h-[92vh] overflow-y-auto lg:overflow-hidden rounded-2xl border border-stone-800 bg-[#121110] text-stone-200 shadow-2xl">
+      <div className="relative flex flex-col lg:flex-row w-full max-w-5xl xl:max-w-6xl max-h-[92dvh] sm:max-h-[95vh] lg:max-h-[92vh] overflow-y-auto lg:overflow-hidden rounded-2xl border border-stone-800 bg-[#121110] text-stone-200 shadow-2xl">
         
         {/* Mobile/Tablet Quick Close Button */}
         <button
           type="button"
           onClick={onClose}
           aria-label="Close review studio"
-          className="lg:hidden absolute top-3 right-3 z-40 rounded-full p-2 bg-stone-900/90 border border-stone-700 text-stone-300 hover:text-white transition-colors cursor-pointer shadow-md"
+          className="lg:hidden absolute top-2.5 right-2.5 z-40 rounded-full p-2.5 bg-stone-900/90 border border-stone-700 text-stone-300 hover:text-white transition-colors cursor-pointer shadow-md min-h-[44px] min-w-[44px] flex items-center justify-center"
         >
           <X className="h-4 w-4" />
         </button>
 
         {/* LEFT COLUMN: Visual Review Studio Canvas & Filmstrip */}
-        <div className="relative w-full lg:flex-1 flex flex-col justify-between bg-[#0c0a09] p-4 sm:p-6 border-b lg:border-b-0 lg:border-r border-stone-800/80 shrink-0 lg:shrink lg:overflow-y-auto">
+        <div className="relative w-full lg:flex-1 flex flex-col justify-between bg-[#0c0a09] p-3.5 sm:p-6 border-b lg:border-b-0 lg:border-r border-stone-800/80 shrink-0 lg:shrink lg:overflow-y-auto">
           
           {/* Header Bar with Mode Selector & Safe Zone Toggle */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3 pb-3 border-b border-stone-800/80 pr-10 lg:pr-0">
@@ -303,12 +303,12 @@ export const StudioLightbox: React.FC<StudioLightboxProps> = ({
             </div>
 
             {/* Segmented Mode Switch: Creative / Compare / Channel UI */}
-            <div className="flex items-center gap-2 shrink-0 flex-wrap">
-              <div className="flex items-center rounded-xl bg-stone-900 border border-stone-800 p-0.5 shadow-inner">
+            <div className="flex items-center gap-2 shrink-0 flex-wrap w-full sm:w-auto">
+              <div className="flex items-center rounded-xl bg-stone-900 border border-stone-800 p-0.5 shadow-inner w-full sm:w-auto justify-between sm:justify-start">
                 <button
                   type="button"
                   onClick={() => setPreviewMode('creative')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  className={`flex-1 sm:flex-none px-3 py-2 sm:py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer text-center min-h-[38px] sm:min-h-0 ${
                     previewMode === 'creative'
                       ? 'bg-white text-stone-950 shadow-xs'
                       : 'text-stone-400 hover:text-white'
@@ -319,7 +319,7 @@ export const StudioLightbox: React.FC<StudioLightboxProps> = ({
                 <button
                   type="button"
                   onClick={() => setPreviewMode('slider')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  className={`flex-1 sm:flex-none px-3 py-2 sm:py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer text-center min-h-[38px] sm:min-h-0 ${
                     previewMode === 'slider'
                       ? 'bg-white text-stone-950 shadow-xs'
                       : 'text-stone-400 hover:text-white'
@@ -330,7 +330,7 @@ export const StudioLightbox: React.FC<StudioLightboxProps> = ({
                 <button
                   type="button"
                   onClick={() => setPreviewMode('social')}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  className={`flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer text-center min-h-[38px] sm:min-h-0 ${
                     previewMode === 'social'
                       ? 'bg-amber-500 text-stone-950 font-bold shadow-xs'
                       : 'text-amber-400/90 hover:text-amber-300'
@@ -345,7 +345,7 @@ export const StudioLightbox: React.FC<StudioLightboxProps> = ({
                 <button
                   type="button"
                   onClick={() => setShowSafeZoneGuides((prev) => !prev)}
-                  className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] font-mono border transition-all cursor-pointer ${
+                  className={`w-full sm:w-auto flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] font-mono border transition-all cursor-pointer min-h-[36px] sm:min-h-0 ${
                     showSafeZoneGuides
                       ? 'bg-amber-500/15 text-amber-300 border-amber-500/40 shadow-xs'
                       : 'bg-stone-900 text-stone-500 border-stone-800 hover:text-stone-300'
@@ -366,7 +366,7 @@ export const StudioLightbox: React.FC<StudioLightboxProps> = ({
               onClick={() => hasPrev && onSelectVariant(allVariants[currentIndex - 1])}
               disabled={!hasPrev}
               aria-label="Previous creative"
-              className={`absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-30 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-stone-900/90 border border-stone-700/80 text-white transition-all shadow-md ${
+              className={`absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-stone-900/90 border border-stone-700/80 text-white transition-all shadow-md touch-manipulation ${
                 hasPrev
                   ? 'hover:bg-stone-800 hover:scale-105 cursor-pointer'
                   : 'opacity-20 cursor-not-allowed'
@@ -380,7 +380,7 @@ export const StudioLightbox: React.FC<StudioLightboxProps> = ({
               onClick={() => hasNext && onSelectVariant(allVariants[currentIndex + 1])}
               disabled={!hasNext}
               aria-label="Next creative"
-              className={`absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-30 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-stone-900/90 border border-stone-700/80 text-white transition-all shadow-md ${
+              className={`absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-stone-900/90 border border-stone-700/80 text-white transition-all shadow-md touch-manipulation ${
                 hasNext
                   ? 'hover:bg-stone-800 hover:scale-105 cursor-pointer'
                   : 'opacity-20 cursor-not-allowed'
@@ -725,8 +725,8 @@ export const StudioLightbox: React.FC<StudioLightboxProps> = ({
         </div>
 
         {/* RIGHT COLUMN: Focused Creative Review Inspector */}
-        <div className="w-full lg:w-[380px] xl:w-[410px] flex flex-col justify-between bg-[#141312] p-4 sm:p-6 overflow-hidden shrink-0">
-          <div className="space-y-4 overflow-y-auto pr-1">
+        <div className="w-full lg:w-[380px] xl:w-[410px] flex flex-col justify-between bg-[#141312] p-4 sm:p-6 overflow-visible lg:overflow-hidden shrink-0">
+          <div className="space-y-4 overflow-visible lg:overflow-y-auto pr-0 lg:pr-1">
             
             {/* Top Inspector Header with Close Button */}
             <div className="flex items-center justify-between pb-3 border-b border-stone-800">

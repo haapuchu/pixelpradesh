@@ -13,21 +13,21 @@ export const JudgeNoticeModal: React.FC<JudgeNoticeModalProps> = ({ isOpen, onCl
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-2xl rounded-2xl bg-white border border-stone-200 shadow-2xl p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-2xl rounded-2xl bg-white border border-stone-200 shadow-2xl p-4 sm:p-8 space-y-5 sm:space-y-6 max-h-[90dvh] sm:max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-start justify-between border-b border-stone-100 pb-4">
+        <div className="flex items-start justify-between border-b border-stone-100 pb-3 sm:pb-4">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold tracking-wide uppercase bg-amber-50 text-amber-900 border border-amber-200">
               <ShieldCheck className="h-3.5 w-3.5 text-amber-700" />
               <span>Cloudinary AI Hackathon 2026</span>
             </div>
-            <h2 className="text-xl font-bold tracking-tight text-stone-900 font-display">
+            <h2 className="text-lg sm:text-xl font-bold tracking-tight text-stone-900 font-display">
               Judge Evaluation & Architecture Transparency
             </h2>
             <p className="text-xs text-stone-500">
@@ -37,7 +37,7 @@ export const JudgeNoticeModal: React.FC<JudgeNoticeModalProps> = ({ isOpen, onCl
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition-colors cursor-pointer"
+            className="p-2 sm:p-1.5 rounded-lg text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition-colors cursor-pointer min-h-[44px] min-w-[44px] sm:min-h-0 sm:min-w-0 flex items-center justify-center"
             aria-label="Close modal"
           >
             <X className="h-5 w-5" />
@@ -107,16 +107,16 @@ export const JudgeNoticeModal: React.FC<JudgeNoticeModalProps> = ({ isOpen, onCl
         </div>
 
         {/* Live execution note */}
-        <div className="text-[11px] text-stone-500 border-t border-stone-100 pt-3 flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2.5">
-            <span>Source: <a href="https://github.com/haapuchu/pixelpradesh" target="_blank" rel="noreferrer" className="underline font-medium text-stone-700 hover:text-stone-900">GitHub</a></span>
+        <div className="text-[11px] text-stone-500 border-t border-stone-100 pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-2">
+          <div className="flex items-center justify-center sm:justify-start gap-2.5">
+            <span>Source: <a href="https://github.com/haapuchu/pixelpradesh" target="_blank" rel="noreferrer" className="underline font-medium text-stone-700 hover:text-stone-900 py-1">GitHub</a></span>
             <span>·</span>
-            <span><a href="https://youtu.be/mgdr_7HrOUQ" target="_blank" rel="noreferrer" className="underline font-medium text-red-600 hover:text-red-700">Watch YouTube Demo</a></span>
+            <span><a href="https://youtu.be/mgdr_7HrOUQ" target="_blank" rel="noreferrer" className="underline font-medium text-red-600 hover:text-red-700 py-1">Watch YouTube Demo</a></span>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-1.5 rounded-lg bg-stone-900 text-white font-medium hover:bg-stone-800 transition-colors cursor-pointer"
+            className="w-full sm:w-auto px-4 py-2.5 sm:py-1.5 rounded-lg bg-stone-900 text-white font-medium hover:bg-stone-800 transition-colors cursor-pointer text-center min-h-[44px] sm:min-h-0 flex items-center justify-center"
           >
             Got it, continue testing
           </button>

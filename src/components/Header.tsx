@@ -1,7 +1,18 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Layers, ArrowDownRight, ExternalLink, Sparkles, X, Info } from 'lucide-react';
+import {
+  Layers,
+  ArrowDownRight,
+  ExternalLink,
+  Sparkles,
+  X,
+  Info,
+  Menu,
+  Video,
+  GitBranch,
+  CheckCircle2,
+} from 'lucide-react';
 import { AdaptrLogo } from './AdaptrLogo';
 import { JudgeNoticeModal } from './JudgeNoticeModal';
 
@@ -17,6 +28,9 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [showJudgeBanner, setShowJudgeBanner] = useState<boolean>(true);
   const [isJudgeModalOpen, setIsJudgeModalOpen] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <>
@@ -27,9 +41,9 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Top Banner: Judge Preview & Cloudinary Transparency */}
       {showJudgeBanner && (
-        <div className="bg-stone-900 border-b border-stone-800 text-stone-300 px-4 py-2 text-xs">
-          <div className="mx-auto flex max-w-7xl items-center justify-between gap-3">
-            <div className="flex items-center gap-2 overflow-hidden text-ellipsis">
+        <div className="bg-stone-900 border-b border-stone-800 text-stone-300 px-3 sm:px-4 py-2 text-xs">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-3">
+            <div className="flex items-center gap-1.5 sm:gap-2 overflow-hidden text-ellipsis min-w-0">
               <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/15 border border-amber-500/30 px-2 py-0.5 text-[10px] font-semibold text-amber-300 shrink-0">
                 <Sparkles className="h-3 w-3 text-amber-400" />
                 <span>Judge Preview</span>
@@ -39,20 +53,21 @@ export const Header: React.FC<HeaderProps> = ({
               </span>
             </div>
 
-            <div className="flex items-center gap-2 shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
               <button
                 type="button"
                 onClick={() => setIsJudgeModalOpen(true)}
-                className="inline-flex items-center gap-1 rounded px-2 py-0.5 text-[11px] font-medium text-amber-400 hover:text-amber-300 hover:bg-stone-800 transition-colors cursor-pointer underline underline-offset-2"
+                className="inline-flex items-center gap-1 rounded px-1.5 sm:px-2 py-1 text-[11px] font-medium text-amber-400 hover:text-amber-300 hover:bg-stone-800 transition-colors cursor-pointer underline underline-offset-2 min-h-[32px] sm:min-h-0"
               >
-                <span>Verify Cloudinary Pipeline</span>
+                <span>Verify <span className="hidden sm:inline">Cloudinary</span> Pipeline</span>
                 <Info className="h-3 w-3" />
               </button>
               <button
                 type="button"
                 onClick={() => setShowJudgeBanner(false)}
-                className="text-stone-500 hover:text-stone-300 transition-colors p-0.5 cursor-pointer"
+                className="text-stone-400 hover:text-stone-200 transition-colors p-1.5 cursor-pointer min-h-[36px] min-w-[36px] flex items-center justify-center rounded"
                 title="Dismiss banner"
+                aria-label="Dismiss banner"
               >
                 <X className="h-3.5 w-3.5" />
               </button>
@@ -62,10 +77,10 @@ export const Header: React.FC<HeaderProps> = ({
       )}
 
       <header className="sticky top-0 z-40 border-b border-stone-200/80 bg-[#fafaf9]/92 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:py-3.5 sm:px-6 lg:px-8">
           {/* Left: Distinctive Adaptr Brand Identity */}
           <div className="flex items-center gap-3">
-            <a href="#" className="flex items-center gap-3 group">
+            <a href="#" className="flex items-center gap-2.5 sm:gap-3 group">
               {/* Adaptr Multi-Format Aperture Symbol */}
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-stone-100/90 border border-stone-200 shadow-2xs transition-transform duration-200 group-hover:scale-105">
                 <AdaptrLogo size={24} />
@@ -86,7 +101,7 @@ export const Header: React.FC<HeaderProps> = ({
             </a>
           </div>
 
-          {/* Center: Subtle Campaign Readiness Indicator */}
+          {/* Center: Subtle Campaign Readiness Indicator (Desktop Only) */}
           <div className="hidden md:flex items-center gap-2 rounded-full border border-stone-200 bg-white px-3 py-1 text-xs text-stone-600 shadow-2xs">
             {totalVariantsCount === 0 ? (
               <>
@@ -112,8 +127,8 @@ export const Header: React.FC<HeaderProps> = ({
             )}
           </div>
 
-          {/* Right: Restrained Navigation */}
-          <nav className="flex items-center gap-2 sm:gap-3" aria-label="Main Navigation">
+          {/* Right: Desktop Navigation (md:flex - UNCHANGED) */}
+          <nav className="hidden md:flex items-center gap-2 sm:gap-3" aria-label="Main Navigation">
             <button
               type="button"
               onClick={() => setIsJudgeModalOpen(true)}
@@ -147,7 +162,130 @@ export const Header: React.FC<HeaderProps> = ({
               <ExternalLink className="h-3 w-3 text-stone-400" />
             </a>
           </nav>
+
+          {/* Mobile Right Controls (<md:flex) */}
+          <div className="flex md:hidden items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setIsJudgeModalOpen(true)}
+              className="inline-flex items-center gap-1 rounded-lg border border-amber-200 bg-amber-50/80 px-2.5 py-2 text-xs font-semibold text-amber-900 shadow-2xs hover:bg-amber-100 transition-colors min-h-[40px]"
+            >
+              <Sparkles className="h-3.5 w-3.5 text-amber-700" />
+              <span>Judge Guide</span>
+            </button>
+
+            {/* Mobile Hamburger Toggle */}
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isMobileMenuOpen}
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-stone-200 bg-white text-stone-700 shadow-2xs hover:bg-stone-50 transition-colors cursor-pointer min-h-[44px] min-w-[44px]"
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-5 w-5 text-stone-900" />
+              ) : (
+                <Menu className="h-5 w-5 text-stone-800" />
+              )}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Dropdown Navigation Drawer */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-stone-200/90 bg-white/98 backdrop-blur-lg px-4 pt-3 pb-5 space-y-3.5 animate-fadeIn shadow-lg">
+            {/* Mobile Campaign Status Pill */}
+            <div className="flex items-center justify-between rounded-xl bg-stone-50 border border-stone-200/80 px-3 py-2 text-xs">
+              <div className="flex items-center gap-2">
+                <span
+                  className={`h-2 w-2 rounded-full ${
+                    readyCount < totalVariantsCount ? 'bg-amber-500 animate-pulse' : 'bg-emerald-500'
+                  }`}
+                />
+                <span className="font-semibold text-stone-900">
+                  {readyCount} / {totalVariantsCount || 12} creatives ready
+                </span>
+              </div>
+              <span className="text-[11px] font-mono text-stone-500">Interactive Demo</span>
+            </div>
+
+            {/* Mobile Nav Links with Accessible Touch Targets (min 44px) */}
+            <nav className="flex flex-col space-y-1" aria-label="Mobile Navigation Drawer">
+              <a
+                href="#workspace"
+                onClick={closeMobileMenu}
+                className="flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-semibold text-stone-900 hover:bg-stone-100 transition-colors min-h-[44px]"
+              >
+                <div className="flex items-center gap-2.5">
+                  <Layers className="h-4 w-4 text-amber-600" />
+                  <span>Campaign Workspace</span>
+                </div>
+                <ArrowDownRight className="h-4 w-4 text-stone-400" />
+              </a>
+
+              <a
+                href="#how-it-works"
+                onClick={closeMobileMenu}
+                className="flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100 transition-colors min-h-[44px]"
+              >
+                <span>How it works</span>
+                <span className="text-xs text-stone-400">3 steps</span>
+              </a>
+
+              <button
+                type="button"
+                onClick={() => {
+                  closeMobileMenu();
+                  setIsJudgeModalOpen(true);
+                }}
+                className="flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-semibold text-amber-900 bg-amber-50/60 hover:bg-amber-100/80 transition-colors min-h-[44px] text-left w-full cursor-pointer"
+              >
+                <div className="flex items-center gap-2.5">
+                  <Sparkles className="h-4 w-4 text-amber-600" />
+                  <span>Judge Guide & Architecture</span>
+                </div>
+                <Info className="h-4 w-4 text-amber-600" />
+              </button>
+
+              <a
+                href="https://youtu.be/mgdr_7HrOUQ"
+                target="_blank"
+                rel="noreferrer"
+                onClick={closeMobileMenu}
+                className="flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100 transition-colors min-h-[44px]"
+              >
+                <div className="flex items-center gap-2.5">
+                  <Video className="h-4 w-4 text-red-600" />
+                  <span>Watch Video Demo</span>
+                </div>
+                <ExternalLink className="h-3.5 w-3.5 text-stone-400" />
+              </a>
+
+              <a
+                href="https://github.com/haapuchu/pixelpradesh"
+                target="_blank"
+                rel="noreferrer"
+                onClick={closeMobileMenu}
+                className="flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100 transition-colors min-h-[44px]"
+              >
+                <div className="flex items-center gap-2.5">
+                  <GitBranch className="h-4 w-4 text-stone-800" />
+                  <span>GitHub Repository</span>
+                </div>
+                <ExternalLink className="h-3.5 w-3.5 text-stone-400" />
+              </a>
+
+              <a
+                href="mailto:contact@pixelpradesh.studio"
+                onClick={closeMobileMenu}
+                className="flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-medium text-stone-600 hover:bg-stone-100 transition-colors min-h-[44px]"
+              >
+                <span>Send Feedback</span>
+                <ExternalLink className="h-3.5 w-3.5 text-stone-400" />
+              </a>
+            </nav>
+          </div>
+        )}
       </header>
     </>
   );
